@@ -25,41 +25,16 @@ use App\Models\User;
 
 Route::get('/', function ()
 {
-    /*
-    $images = Image::all();
-    foreach($images as $image)
-    {
-        echo $image->image_path."<br>";
-        echo $image->description."<br>";
-        echo $image->user->name.' '.$image->user->surname.'<br>';
-
-        if(count($image->comments) >= 1)
-        {
-            echo "<h4>Comentarios</h4>";
-            foreach($image->comments as $comment)
-            {
-                echo $comment->user->name.' '.$comment->user->surname.': '.$comment->content.'<br>';
-            }
-        }else
-        {
-            echo "<h5>No hay comentarios</h5>";
-        }
-        echo 'LIKES: '.count($image->likes);
-
-        echo "<br><hr>";
-    }
-    die();
-    */
 
     return view('welcome');
 });
 
 Auth::routes();
 
-/*Añadir rutas a continuación:
+/*Add new Routes here:
 *
 *
-* recordar añadirlas arriba de web.php
+* 
 *
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
